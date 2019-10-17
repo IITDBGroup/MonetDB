@@ -259,8 +259,8 @@ CREATE FUNCTION binsearch_ranges_pos(val BIGINT, ranges BLOB)
            result->initialize(result, val.count);
 
            // make sure the second argument is a constant  and is a valid encoding of a list of ranges (a concatenation of a even length list of int64_t integers)
-           if(ranges.count != 1)
-               return "Second argument should be a constant!";
+           //if(ranges.count != 1)
+           //    return "Second argument should be a constant!";
            if((ranges.data[0].size % 16) != 0)
                return "Second argument should be a blob storing a list of int64_t pairs as ranges";
 
